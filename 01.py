@@ -58,6 +58,11 @@ def get_rnd_string_equation(equation_list, rnd_choice = randint(1, 3)):
     return equation_string
 
 
+def write_to_txt(w_string):
+    with open('equation.txt', 'w') as data:                                                                # записывает строку в txt
+        data.write(w_string)
+
+
 k = randint(1, 5)                                                                                          # оставил до 5, чтобы бесполезно большие уравнения не генерились
 equation_list = gen_primary_equation_list(k)
 # print(equation_list)
@@ -68,7 +73,7 @@ formatting_equation_list(equation_list)
 equation_rnd_string = get_rnd_string_equation(equation_list)
 print(equation_rnd_string)
 
-
+write_to_txt(equation_rnd_string)
 
 
 
